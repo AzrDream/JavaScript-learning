@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getSum(...values) {
+        let sum = 0;
+        values.forEach((value)=>{
+            sum += value;
+        });
+        return sum;
+    }
+    console.log(getSum(10, 20, 30));
+</script>
+</body>
+</html>
