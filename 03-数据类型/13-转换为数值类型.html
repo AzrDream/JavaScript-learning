@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 	1.通过Number(常量or变量);方式来转换
+    let str = '/';
+    console.log(typeof str);
+    let num = Number(str);
+    console.log(num);
+    console.log(typeof num);
+
+    str = true;
+    num = Number(str);
+    console.log(num);
+
+    // 2.还可以通过数学运算中的+号和-号来转换
+    // +/-底层本质上就是调用了Number函数
+    str = '123';
+    num = +str;
+    console.log(num);
+
+    // 3.还可以通过parseInt(需要转换的字符串)/parseFloat(需要转换的字符串)
+    // 停止的时候如果还没有提取到数值,那么就返回NaN
+    // parseInt/parseFloat都会将传入的数据当做字符串来处理
+    str = 'a12.1px';
+    num = parseInt(str);
+    console.log(num);
+    num = parseFloat(str);
+    console.log(num);
+</script>
+</body>
+</html>

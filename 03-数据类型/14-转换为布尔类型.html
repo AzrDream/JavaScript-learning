@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 在JavaScript中如果想将基本数据类型转换为布尔类型，那么只需要调用Boolean
+    let str = '';
+    let flag = Boolean(str);
+    console.log(flag);
+    flag = Boolean(0);
+    console.log(flag);
+    flag = Boolean(undefined);
+    console.log(flag);
+    // 在JavaScript中NaN属于Number类型，如果是NaN也会转换为false
+    flag = Boolean(NaN);
+    console.log(flag);
+    flag = Boolean(null);
+    console.log(flag);
+</script>
+</body>
+</html>
