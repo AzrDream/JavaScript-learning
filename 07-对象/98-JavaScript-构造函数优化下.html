@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(myName, myAge) {
+        this.name = myName;
+        this.age = myAge;
+    }
+    Person.prototype.say = function () {
+        console.log('hello');
+    };
+    let obj1 = new Person('jkw', 20);
+    let obj2 = new Person('zs', 22);
+    console.log(obj1.say() === obj2.say());
+    console.log(obj1.constructor);
+</script>
+</body>
+</html>

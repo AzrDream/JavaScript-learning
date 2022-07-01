@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Person {
+        name = 'jkw';
+        age = 22;
+    }
+    let p1 = new Person();
+    let p2 = new Object();
+    let p3 = p1;
+
+    deepCopy(p2,p1);
+    console.log(p2 === p1);
+    console.log(p3 === p1);
+
+    function deepCopy(target, source) {
+        for(let key in source) {
+            let sourceValue = source[key];
+            if(sourceValue instanceof Object) {
+                let subTarget = new sourceValue.constructor;
+                target[key] = subTarget;
+                deepCopy(subTarget, sourceValue);
+            }else{
+                target[key] = sourceValue;
+            }
+        }
+    }
+</script>
+</body>
+</html>
