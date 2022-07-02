@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>21-JavaScript-正则表达式</title>
+</head>
+<body>
+<script>
+    /*
+    let str = "123abc456";
+    //1、创建一个正则表达式对象
+    //2、指定匹配的规则
+    //注意点：默认情况下正则表达式区分大小写
+    //不想让正则表达式区分大小写可以在后面加,"i"
+    let reg = new RegExp("A","i");//判断是不是包含a
+    let res = reg.test(str);
+    console.log(res);
+     */
+    /*
+    let str = "abc-2020-3-11def";
+    //通过构造函数创建正则表达式对象
+    //let reg = new RegExp("\\d{4}-\\d{1,2}-\\d{1,2}");
+    //通过字面量来创建正则表达式对象
+    let reg = /\d{4}-\d{1,2}-\d{1,2}/;
+    let res = reg.test(str);
+    console.log(res);
+     */
+    //注意点：默认情况下在正则表达式中一旦匹配就会停止查找
+    let str = "abc-2020-3-11def2019-11-11ada";
+    let reg = /\d{4}-\d{1,2}-\d{1,2}/g;
+    let newStr = str.replace(reg,"AzrDream");
+    console.log(str);
+    console.log(newStr);
+</script>
+</body>
+</html>

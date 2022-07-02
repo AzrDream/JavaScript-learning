@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12-JavaScript-表单事件</title>
+</head>
+<body>
+<input type="text">
+<script>
+    let oInput = document.querySelector("input");
+    //1、监听input获取焦点
+    oInput.onfocus=function () {
+        console.log("获取到了焦点");
+    }
+    //2、监听input失去焦点
+    oInput.onblur=function () {
+        console.log("失去了焦点");
+    }
+    //3、监听input内容改变
+    oInput.onchange=function () {
+        console.log(this.value);
+    }
+</script>
+</body>
+</html>

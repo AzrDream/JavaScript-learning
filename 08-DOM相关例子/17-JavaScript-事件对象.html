@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>17-JavaScript-事件对象</title>
+</head>
+<body>
+<button id="btn">我是按钮</button>
+<a href="http://www.it666.com">知播渔教育</a>
+<script>
+    let oBtn = document.querySelector("#btn");
+    oBtn.addEventListener("click",function (event) {
+        event = event || window.event;
+        //alert("666");
+        console.log(event);
+        console.log(typeof event);
+    })
+</script>
+</body>
+</html>

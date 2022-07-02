@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13-JavaScript-闭包</title>
+</head>
+<body>
+<script>
+    /*
+    function test() {
+        var i = 666;    //局部变量
+    }   //只要代码执行到了大括号结束，这个变量就会自动释放
+     */
+    
+    function test() {
+        var i = 666;    //局部变量
+        //由于demo函数满足闭包的两个条件，那么demo函数就是闭包
+        return function demo() {
+            console.log(i);
+        }
+    }
+    let fn = test();
+    fn();
+</script>
+</body>
+</html>

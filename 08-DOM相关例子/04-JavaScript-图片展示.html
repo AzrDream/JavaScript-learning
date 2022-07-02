@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04-JavaScript-图片展示</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 670px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        ul{
+            display: flex;
+            justify-content: space-between;
+        }
+        ul>li{
+            list-style: none;
+            float: left;
+        }
+        ul>li>img{
+            width: 167px;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <img src="images/ad1.jpg" alt="">
+    <ul>
+        <li><img src="images/ad1.jpg" alt=""></li>
+        <li><img src="images/ad2.jpg" alt=""></li>
+        <li><img src="images/ad3.jpg" alt=""></li>
+        <li><img src="images/ad4.jpg" alt=""></li>
+    </ul>
+</div>
+<script>
+    let oImg = document.querySelector("div>img");
+    let oItems = document.querySelectorAll("li>img");
+    for(let item of oItems){
+        item.onclick = change;
+    }
+    function change() {
+        oImg.src = this.src;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14-JavaScript-循环索引同步练习</title>
+</head>
+<body>
+<button>我是按钮1</button>
+<button>我是按钮2</button>
+<button>我是按钮3</button>
+<script>
+    let oBtns = document.querySelectorAll("button");
+    //for(let i = 0; i<oBtns.length; i++){
+    for(var i = 0; i<oBtns.length; i++){
+        oBtns[i].onclick=function () {
+            console.log(i);
+        }
+    }
+</script>
+</body>
+</html>

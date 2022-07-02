@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16-JavaScript-添加事件三种方式</title>
+</head>
+<body>
+<button id="btn">我是按钮</button>
+<script>
+    var oBtn = document.getElementById("btn");
+    //方式一
+    /*oBtn.onclick=function () {
+        alert("666");
+    };
+    oBtn.onclick=function () {
+        alert("777");
+    }*/
+    //方式二
+    /*oBtn.addEventListener("click",function () {
+        alert("666");
+    });
+    oBtn.addEventListener("click",function () {
+        alert("777");
+    })*/
+    //方式三
+    /*oBtn.attachEvent("onclick",function () {
+        alert("666");
+    });
+    oBtn.attachEvent("onclick",function () {
+        alert("777");
+    });*/
+    addEvent(oBtn, "click", function () {
+        alert("666");
+    })
+    addEvent(oBtn, "click", function () {
+        alert("777");
+    })
+    function addEvent(ele, name, fn) {
+        if(ele.attachEvent){
+            ele.attachEvent("on"+name, fn);
+        }else{
+            ele.addEventListener(name, fn);
+        }
+    }
+</script>
+</body>
+</html>
