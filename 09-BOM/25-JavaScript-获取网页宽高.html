@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>25-JavaScript-获取网页宽高</title>
+</head>
+<body>
+<script>
+    let {width,height} = getScreen();
+    console.log(width);
+    console.log(height);
+    function getScreen() {
+        let width;
+        let height;
+        if(window.innerWidth){
+            width = window.innerWidth;
+            height = window.innerHeight;
+        }else if(document.compatMode === "BackCompat"){
+            width = document.body.clientWidth;
+            height = document.body.clientHeight;
+        }else{
+            width = document.documentElement.clientWidth;
+            height = document.documentElement.clientHeight;
+        }
+        return {
+            width: width,
+            height: height
+        }
+    }
+</script>
+</body>
+</html>

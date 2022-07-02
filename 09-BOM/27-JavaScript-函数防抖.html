@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>27-JavaScript-函数防抖</title>
+</head>
+<body>
+<input type="text">
+<script>
+    function mySay(a) {
+        console.log(a);
+    }
+    function Person(a) {
+        this.say = mySay(a);
+    }
+    let obj1 = new Person('zs');
+    let obj2 = new Person('ls');
+    console.log(obj1.say === obj2.say);
+
+    let oInput = document.querySelector("input");
+    let timerId = null;
+    oInput.oninput = function () {
+        timerId && clearTimeout(timerId);
+        timerId = setTimeout(function () {
+            console.log("发送网络请求");
+        },1000);
+    };
+
+    function debounce(fn, wait) {
+        let timer = null;
+
+        return function () {
+            let context = this;
+            let args = arguments;
+            if(timer) {
+                clearTimeout(timer);
+                timer = null;
+            }
+            timer = setTimeout(()=>{
+                fn.apply(context, args);
+            }, wait);
+        }
+    }
+</script>
+</body>
+</html>
